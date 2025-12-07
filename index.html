@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font Pairing App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+ 
+  </head>
+
+  <body>
+    <div class="app-container">
+      <div class="section-1">
+        <div class="menu-container">
+          <div class="font-display" id="font1Name">
+            <h2 class="menu-font-1">Font 1</h2>
+          </div>
+          <div class="icon-container">
+            <div class="menu-btn" data-menu="2">
+              <i class="ri-menu-unfold-line"></i>
+            </div>
+            <button class="lock-btn" data-font="1">
+              <i class="ri-lock-unlock-line"></i>
+            </button>
+          </div>
+          <div class="font-display" id="font2Name">
+            <h2 class="menu-font-2">Font 2</h2>
+          </div>
+
+          <div class="icon-container">
+            <div class="menu-btn" data-menu="3">
+              <i class="ri-menu-unfold-line"></i>
+            </div>
+            <button class="lock-btn" data-font="2">
+              <i class="ri-lock-unlock-line"></i>
+            </button>
+          </div>
+          <div class="font-display" id="font3Name">
+            <h2 class="menu-font-3">Font 3</h2>
+          </div>
+          <div class="icon-container">
+            <div class="menu-btn" data-menu="4">
+              <i class="ri-menu-unfold-line"></i>
+            </div>
+            <button class="lock-btn" data-font="3">
+              <i class="ri-lock-unlock-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-2">
+      
+        <div class="child">
+          <div class="icons-box">
+            <div class="controls">
+              <div class="menu-btn" data-menu="1">
+                <i class="ri-menu-fill"></i>
+              </div>
+              <button id="theme-toggle">🌙</button>
+              <!-- New theme toggle button -->
+  
+              <div class="controls">
+                <button id="generate-btn">Generate</button>
+                <label for="contrast-slider">Contrast:</label>
+                <!-- Removed span -->
+                <input
+                  type="range"
+                  id="contrast-slider"
+                  min="0"
+                  max="100"
+                  value="50"
+                  title="Balanced"
+                />
+                <!-- Added title for tooltip -->
+              </div>
+            </div>
+          </div>
+  
+          <div class="font-pair">
+            <div class="font-display" id="font1">
+              <p id="font1-text" contenteditable="true" data-placeholder="Type your heading here...">Font pairing made simple</p>
+            </div>
+            <div class="font-display" id="font2">
+              <p id="font2-text" contenteditable="true" data-placeholder="Type your subtitle here...">Generate font combinations with deep learning</p>
+            </div>
+            <div class="font-display" id="font3">
+              <p id="font3-text" contenteditable="true" data-placeholder="Type your body text here...">
+                Click (Generate) to create a new font pairing, (Lock) to lock fonts that you want to keep, and (Edit) to choose a font manually. The text is editable, try replacing it with your company name or other copy.
+                <br />
+                <br />The goal of font pairing is to select fonts that share an overarching theme yet have a pleasing contrast. Which fonts work together is largely a matter of intuition, but we approach this problem with a neural net. See Github for more technical details.
+              </p>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="footer-top-line"></div>
+        
+            <div class="footer-links">
+                <a href="#">How it works</a>
+                <a href="#">Github</a>
+                <a href="#">Font visualizer</a>
+                <a href="#">Logo maker</a>
+            </div>
+        
+            <div class="footer-news">
+                <h4>Keep in touch</h4>
+                <p>news related to Fontjoy and deep learning, a few times a year.</p>
+        
+                <div class="footer-form">
+                    <input type="email" placeholder="email address" id="emailInput">
+                    <button id="signupBtn">Sign up</button>
+                </div>
+            </div>
+        </footer>
+        
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu panel -->
+    <div id="menuPanel" class="menu-panel">
+      <div class="menu-header">
+        <h3 id="menuTitle">Fonts</h3>
+        <div class="menu-icons">
+          <button id="closeMenu">✖</button>
+          <button class="lock-btn" data-font="3">
+            <i class="ri-lock-2-fill"></i>
+          </button>
+        </div>
+      </div>
+
+      <input type="text" id="searchFonts" placeholder="search font" />
+
+      <div id="fontGrid" class="font-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
