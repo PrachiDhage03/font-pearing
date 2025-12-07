@@ -488,3 +488,10 @@ body {
   font-family: "helvetica";
 }
 
+.disclaimer {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+  opacity: 0.7;
+  
+}
