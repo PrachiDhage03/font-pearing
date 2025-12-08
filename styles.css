@@ -267,6 +267,11 @@ body {
 .font-pair {
   max-width: 820px;
 }
+.font-pair * {
+  border: none !important;
+  outline: none !important;
+}
+
 
 .font-pair .font-display:nth-of-type(1) p,
 .font-pair #font1-text {
@@ -488,10 +493,3 @@ body {
   font-family: "helvetica";
 }
 
-.disclaimer {
-  font-size: 12px;
-  text-align: center;
-  margin-top: 10px;
-  opacity: 0.7;
-  
-}
